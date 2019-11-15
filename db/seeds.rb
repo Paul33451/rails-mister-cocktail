@@ -12,10 +12,10 @@ ingredients["drinks"].each do |ingredient|
   Ingredient.create(name: ingredient["strIngredient1"])
 end
 
-url2 = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list'
-cocktails_serialized = open(url2).read
-cocktails = JSON.parse(cocktails_serialized)
+# url2 = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list'
+# cocktails_serialized = open(url2).read
+# cocktails = JSON.parse(cocktails_serialized)
 
-cocktails["drinks"].each do |cocktail|
-  Cocktail.create(name: cocktail["strCategory"])
-end
+# cocktails["drinks"].each do |cocktail|
+#   Cocktail.create(name: cocktail["strCategory"])
+# end

@@ -1,11 +1,28 @@
-<h1>Cockail list</h1>
-<ul>
-<% @cocktails.each do |cocktail| %>
-  <li>
-    <%= cocktail.name %>
-    <%= link_to 'See more', cocktail_path(cocktail)  %>
-  </li>
-<% end %>
-</ul>
+<html>
+  <head>
 
-<%= link_to 'Add new cocktail', new_cocktail_path  %>
+    <link rel="stylesheet" href="../../assets/stylesheets.application.css">
+  </head>
+
+  <body>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2019/09/30/05/50/sport-4514879_1280.jpg);">
+      <div class="container">
+        <h1>Mister Cock'prot</h1>
+        <p>Who said you can't train and drink?</p>
+      </div>
+    </div>
+    <%= link_to 'Add a cocktail', new_cocktail_path  %>
+
+
+    <div class="cards">
+        <% @cocktails.each do |cocktail| %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.photo %>)">
+              <%= cocktail.name %>
+              <%= link_to 'See more', cocktail_path(cocktail)  %>
+          </div>
+        <% end %>
+    </div>
+
+
+  </body>
+</html>
